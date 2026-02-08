@@ -17,7 +17,7 @@ function App() {
       './street-1.jpg',
       './street-2.jpg',
       './nude-1.jpg',
-      './nude-2.lpg',
+      './nude-2.jpg',
     ];
 
     imagesToPreload.forEach((src) => {

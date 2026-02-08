@@ -3,9 +3,10 @@ import { useRef } from 'react';
 
 const Statement = () => {
   const ref = useRef(null);
+  // once: true - анимация только один раз
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const words = "Fotografie ist das Pausieren der Zeit, das Festhalten des Vergänglichen. In jedem Bild suche ich nach jener Wahrheit, die jenseits der Oberfläche liegt – nach den Geschichten, die unsere Gesichter erzählen, nach der Poesie, die in den Alltag eingewoben ist.".split(" ");
+  const words = "Fotografie ist das Pausieren der Zeit, das Festhalten des Vergänglichen. In jedem Bild suche ich nach jener Wahrheit, die jenseits der Oberfläche liegt – nach den Geschichten, die unsere Gesichter erzählen, nach der Poсие, die in den Alltag eingewoben ist.".split(" ");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -45,9 +46,13 @@ const Statement = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="text-2xl sm:text-3xl lg:text-4xl font-light text-neutral-800 leading-relaxed relative"
+            className="text-2xl sm:text-3xl lg:text-4xl font-light text-neutral-800 leading-relaxed relative px-4"
           >
-            <span className="font-serif text-7xl text-neutral-200 absolute -left-8 -top-8 select-none">"</span>
+            {/* Исправленная открывающая кавычка */}
+            <span className="font-serif text-7xl sm:text-8xl text-neutral-200 absolute -left-2 sm:-left-10 -top-12 sm:-top-16 select-none opacity-60">
+              "
+            </span>
+
             {words.map((word, index) => (
               <motion.span
                 variants={wordVariants}
@@ -57,7 +62,11 @@ const Statement = () => {
                 {word}
               </motion.span>
             ))}
-            <span className="font-serif text-7xl text-neutral-200 absolute -bottom-12 select-none">"</span>
+
+            {/* Исправленная закрывающая кавычка (добавлен right) */}
+            <span className="font-serif text-7xl sm:text-8xl text-neutral-200 absolute -right-2 sm:-right-10 -bottom-10 select-none opacity-60">
+              "
+            </span>
           </motion.blockquote>
 
           <motion.div
