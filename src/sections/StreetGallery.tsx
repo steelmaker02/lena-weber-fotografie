@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X } from 'lucide-react';
 
 const streetImages = [
   { src: './street-1.jpg', alt: 'Einsamkeit auf der Parkbank', title: 'Stille Momente' },
@@ -26,7 +26,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }
+    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] as any }
   }
 };
 
@@ -47,15 +47,6 @@ const StreetGallery = () => {
     document.body.style.overflow = 'auto';
   };
 
-  const nextImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev + 1) % streetImages.length);
-  };
-
-  const prevImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev - 1 + streetImages.length) % streetImages.length);
-  };
 
   return (
     <>

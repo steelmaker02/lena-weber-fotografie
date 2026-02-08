@@ -1,11 +1,11 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { useRef } from 'react';
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -16,12 +16,15 @@ const About = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: {
+        duration: 0.8,
+        ease: "easeOut" as any
+      }
     },
   };
 
@@ -46,7 +49,7 @@ const About = () => {
             </motion.h2>
 
             <motion.div variants={itemVariants} className="space-y-6 text-neutral-600 leading-relaxed">
-              <p>Ich bin Lena Weber, eine Fotografin aus Berlin. Meine Arbeit bewegt sich im Spannungsfeld zwischen der rohen Authentizität der Straße und der verletzlichen Intimität des menschlichen Körpers.</p>
+              <p>Ich bin Lena Weber, eine Fotografin aus Berlin. Meine Arbeit bewegт sich im Spannungsfeld zwischen der rohen Authentizität der Straße und der verletzlichen Intimität des menschlichen Körpers.</p>
               <p>In meiner Straßenfotografie suche ich nach jenen ungeschönten Momenten, die das wahre Gesicht einer Stadt enthüllen.</p>
             </motion.div>
 
@@ -67,7 +70,7 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: "easeOut" as any }}
             className="order-1 lg:order-2"
           >
             <div className="relative aspect-[3/4] overflow-hidden shadow-2xl">
