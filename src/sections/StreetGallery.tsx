@@ -87,17 +87,19 @@ const StreetGallery = () => {
                   key={idx}
                   variants={itemVariants}
                   onClick={() => openLightbox(idx)}
-                  className="relative cursor-pointer group h-[300px] sm:h-[400px] md:h-[500px] bg-neutral-900 overflow-hidden will-change-transform"
+                  className="relative cursor-pointer group h-[300px] sm:h-[400px] md:h-[500px] bg-neutral-900 overflow-hidden"
                 >
                   <img
                     src={streetImages[idx].src}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                     loading="lazy"
                     onLoad={(e) => (e.currentTarget.style.opacity = "1")}
-                    style={{ opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                    style={{ opacity: 0, transition: "opacity 0.6s ease-in-out" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <h3 className="absolute bottom-6 left-6 text-white text-xl font-light opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">{streetImages[idx].title}</h3>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <h3 className="text-white text-2xl font-light font-serif">{streetImages[idx].title}</h3>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -108,17 +110,19 @@ const StreetGallery = () => {
                   key={idx}
                   variants={itemVariants}
                   onClick={() => openLightbox(idx)}
-                  className="relative cursor-pointer group aspect-[3/4] bg-neutral-900 overflow-hidden will-change-transform"
+                  className="relative cursor-pointer group aspect-[3/4] bg-neutral-900 overflow-hidden"
                 >
                   <img
                     src={streetImages[idx].src}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                     loading="lazy"
                     onLoad={(e) => (e.currentTarget.style.opacity = "1")}
-                    style={{ opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                    style={{ opacity: 0, transition: "opacity 0.6s ease-in-out" }}
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-                  <h3 className="absolute bottom-6 left-6 text-white text-lg font-light opacity-0 group-hover:opacity-100 transition-opacity">{streetImages[idx].title}</h3>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-3 group-hover:translate-y-0">
+                    <h3 className="text-white text-lg font-light font-serif">{streetImages[idx].title}</h3>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -131,13 +135,15 @@ const StreetGallery = () => {
               >
                 <img
                   src={streetImages[5].src}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                   loading="lazy"
                   onLoad={(e) => (e.currentTarget.style.opacity = "1")}
-                  style={{ opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                  style={{ opacity: 0, transition: "opacity 0.6s ease-in-out" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <h3 className="absolute bottom-6 left-6 text-white text-xl font-light opacity-0 group-hover:opacity-100 transition-opacity">{streetImages[5].title}</h3>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                  <h3 className="text-white text-2xl font-light font-serif">{streetImages[5].title}</h3>
+                </div>
               </motion.div>
 
               <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
@@ -145,13 +151,15 @@ const StreetGallery = () => {
                   <div key={idx} className="relative cursor-pointer group aspect-square bg-neutral-900 overflow-hidden" onClick={() => openLightbox(idx)}>
                     <img
                       src={streetImages[idx].src}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                       loading="lazy"
                       onLoad={(e) => (e.currentTarget.style.opacity = "1")}
-                      style={{ opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                      style={{ opacity: 0, transition: "opacity 0.6s ease-in-out" }}
                     />
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <h3 className="absolute bottom-4 left-4 text-white text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity">{streetImages[idx].title}</h3>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                      <h3 className="text-white text-xs font-light font-serif tracking-wider">{streetImages[idx].title}</h3>
+                    </div>
                   </div>
                 ))}
               </motion.div>
@@ -168,18 +176,19 @@ const StreetGallery = () => {
           <button onClick={prevImage} className="absolute left-6 top-1/2 -translate-y-1/2 text-white/50 hover:text-white z-10"><ChevronLeft className="w-12 h-12" /></button>
           <button onClick={nextImage} className="absolute right-6 top-1/2 -translate-y-1/2 text-white/50 hover:text-white z-10"><ChevronRight className="w-12 h-12" /></button>
 
-          <motion.img
-            key={currentImageIndex}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            src={streetImages[currentImageIndex].src}
-            className="max-w-full max-h-[85vh] object-contain shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          />
-
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm text-center">
-            <p className="text-lg text-white mb-1 font-serif">{streetImages[currentImageIndex].title}</p>
-            <p className="tracking-widest opacity-50">{currentImageIndex + 1} / {streetImages.length}</p>
+          <div className="relative max-w-full max-h-full flex flex-col items-center">
+            <motion.img
+              key={currentImageIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              src={streetImages[currentImageIndex].src}
+              className="max-w-full max-h-[85vh] object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <div className="mt-6 text-center text-white/80">
+              <p className="text-xl font-serif mb-1">{streetImages[currentImageIndex].title}</p>
+              <p className="text-sm tracking-widest opacity-50 uppercase">{currentImageIndex + 1} / {streetImages.length}</p>
+            </div>
           </div>
         </motion.div>
       )}
