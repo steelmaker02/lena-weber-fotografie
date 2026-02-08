@@ -96,7 +96,7 @@ const Pricing = () => {
           className="text-center mb-16 lg:mb-24"
         >
           <motion.span variants={itemVariants} className="text-sm uppercase tracking-widest text-neutral-500 mb-4 block">
-            Investment
+            Preise
           </motion.span>
           <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl lg:text-5xl font-light text-neutral-900 mb-6 font-serif">
             Ihr persönliches Fotoshooting
