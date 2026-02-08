@@ -83,7 +83,7 @@ const About = () => {
           >
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
-                src="/about-portrait.jpg"
+                src="./about-portrait.jpg"
                 alt="Lena Weber - Fotografin"
                 className="w-full h-full object-cover"
               />

@@ -2,14 +2,14 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const streetImages = [
-  { src: '/street-1.jpg', alt: 'Einsamkeit auf der Parkbank', title: 'Stille Momente' },
-  { src: '/street-2.jpg', alt: 'Regen in der Stadt', title: 'Neon-Nächte' },
-  { src: '/street-3.jpg', alt: 'U-Bahn Station', title: 'Urbaner Fluss' },
-  { src: '/street-4.jpg', alt: 'Gasse im Morgenlicht', title: 'Goldene Stunde' },
-  { src: '/street-5.jpg', alt: 'Café Reflexion', title: 'Spiegelungen' },
-  { src: '/street-6.jpg', alt: 'Saxophonist im Tunnel', title: 'Musik der Stadt' },
-  { src: '/street-7.jpg', alt: 'Kind mit Tauben', title: 'Unschuld' },
-  { src: '/street-8.jpg', alt: 'Lichtstrahlen in Ruine', title: 'Verlassene Schönheit' },
+  { src: './street-1.jpg', alt: 'Einsamkeit auf der Parkbank', title: 'Stille Momente' },
+  { src: './street-2.jpg', alt: 'Regen in der Stadt', title: 'Neon-Nächte' },
+  { src: './street-3.jpg', alt: 'U-Bahn Station', title: 'Urbaner Fluss' },
+  { src: './street-4.jpg', alt: 'Gasse im Morgenlicht', title: 'Goldene Stunde' },
+  { src: './street-5.jpg', alt: 'Café Reflexion', title: 'Spiegelungen' },
+  { src: './street-6.jpg', alt: 'Saxophonist im Tunnel', title: 'Musik der Stadt' },
+  { src: './street-7.jpg', alt: 'Kind mit Tauben', title: 'Unschuld' },
+  { src: './street-8.jpg', alt: 'Lichtstrahlen in Ruine', title: 'Verlassene Schönheit' },
 ];
 const StreetGallery = () => {
   const ref = useRef(null);
