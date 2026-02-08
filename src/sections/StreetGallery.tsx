@@ -17,22 +17,22 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 }
   }
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] as any }
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as any }
   }
 };
 
 const StreetGallery = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -83,8 +83,19 @@ const StreetGallery = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[0, 1].map((idx) => (
-                <motion.div key={idx} variants={itemVariants} onClick={() => openLightbox(idx)} className="relative cursor-pointer group h-[400px] md:h-[500px] overflow-hidden">
-                  <img src={streetImages[idx].src} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy" />
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  onClick={() => openLightbox(idx)}
+                  className="relative cursor-pointer group h-[300px] sm:h-[400px] md:h-[500px] bg-neutral-900 overflow-hidden will-change-transform"
+                >
+                  <img
+                    src={streetImages[idx].src}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    loading="lazy"
+                    onLoad={(e) => (e.currentTarget.style.opacity = "1")}
+                    style={{ opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <h3 className="absolute bottom-6 left-6 text-white text-xl font-light opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">{streetImages[idx].title}</h3>
                 </motion.div>
@@ -93,8 +104,19 @@ const StreetGallery = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[2, 3, 4].map((idx) => (
-                <motion.div key={idx} variants={itemVariants} onClick={() => openLightbox(idx)} className="relative cursor-pointer group aspect-[3/4] overflow-hidden">
-                  <img src={streetImages[idx].src} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  onClick={() => openLightbox(idx)}
+                  className="relative cursor-pointer group aspect-[3/4] bg-neutral-900 overflow-hidden will-change-transform"
+                >
+                  <img
+                    src={streetImages[idx].src}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    loading="lazy"
+                    onLoad={(e) => (e.currentTarget.style.opacity = "1")}
+                    style={{ opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                  />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
                   <h3 className="absolute bottom-6 left-6 text-white text-lg font-light opacity-0 group-hover:opacity-100 transition-opacity">{streetImages[idx].title}</h3>
                 </motion.div>
@@ -104,18 +126,30 @@ const StreetGallery = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <motion.div
                 variants={itemVariants}
-                className="gallery-item relative cursor-pointer group aspect-[4/3] md:aspect-auto md:h-[400px] overflow-hidden"
+                className="relative cursor-pointer group aspect-[4/3] md:aspect-auto md:h-[400px] bg-neutral-900 overflow-hidden"
                 onClick={() => openLightbox(5)}
               >
-                <img src={streetImages[5].src} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <img
+                  src={streetImages[5].src}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  onLoad={(e) => (e.currentTarget.style.opacity = "1")}
+                  style={{ opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <h3 className="absolute bottom-6 left-6 text-white text-xl font-light opacity-0 group-hover:opacity-100 transition-opacity">{streetImages[5].title}</h3>
               </motion.div>
 
               <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
                 {[6, 7].map((idx) => (
-                  <div key={idx} className="relative cursor-pointer group aspect-square overflow-hidden" onClick={() => openLightbox(idx)}>
-                    <img src={streetImages[idx].src} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                  <div key={idx} className="relative cursor-pointer group aspect-square bg-neutral-900 overflow-hidden" onClick={() => openLightbox(idx)}>
+                    <img
+                      src={streetImages[idx].src}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                      onLoad={(e) => (e.currentTarget.style.opacity = "1")}
+                      style={{ opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                    />
                     <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <h3 className="absolute bottom-4 left-4 text-white text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity">{streetImages[idx].title}</h3>
                   </div>
