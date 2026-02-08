@@ -3,10 +3,9 @@ import { useRef } from 'react';
 
 const Statement = () => {
   const ref = useRef(null);
-  // once: true - анимация только один раз
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const words = "Fotografie ist das Pausieren der Zeit, das Festhalten des Vergänglichen. In jedem Bild suche ich nach jener Wahrheit, die jenseits der Oberfläche liegt – nach den Geschichten, die unsere Gesichter erzählen, nach der Poсие, die in den Alltag eingewoben ist.".split(" ");
+  const words = "Fotografie ist das Pausieren der Zeit, das Festhalten des Vergänglichen. In jedem Bild suche ich nach jener Wahrheit, die jenseits der Oberfläche liegt – nach den Geschichten, die unsere Gesichter erzählen, nach der Poesie, die in den Alltag eingewoben ist.".split(" ");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -14,7 +13,7 @@ const Statement = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.02,
-        delayChildren: 0.3
+        delayChildren: 0.1
       },
     },
   };
@@ -30,13 +29,12 @@ const Statement = () => {
 
   return (
     <section id="statement" className="py-24 sm:py-32 lg:py-40 bg-[#f5f4f2] overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-center"
         >
           <span className="text-sm uppercase tracking-widest text-neutral-400 mb-12 block font-medium">
             Künstlerisches Statement
@@ -46,10 +44,10 @@ const Statement = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="text-2xl sm:text-3xl lg:text-4xl font-light text-neutral-800 leading-relaxed relative px-4"
+            className="text-2xl sm:text-3xl lg:text-4xl font-light text-neutral-800 leading-relaxed relative inline-block"
           >
-            {/* Исправленная открывающая кавычка */}
-            <span className="font-serif text-7xl sm:text-8xl text-neutral-200 absolute -left-2 sm:-left-10 -top-12 sm:-top-16 select-none opacity-60">
+            {/* Первая кавычка теперь привязана к границе текста */}
+            <span className="font-serif text-6xl sm:text-7xl text-neutral-200 absolute -left-6 sm:-left-8 -top-6 sm:-top-8 select-none">
               "
             </span>
 
@@ -63,8 +61,8 @@ const Statement = () => {
               </motion.span>
             ))}
 
-            {/* Исправленная закрывающая кавычка (добавлен right) */}
-            <span className="font-serif text-7xl sm:text-8xl text-neutral-200 absolute -right-2 sm:-right-10 -bottom-10 select-none opacity-60">
+            {/* Вторая кавычка для симметрии */}
+            <span className="font-serif text-6xl sm:text-7xl text-neutral-200 absolute -right-6 sm:-right-8 -bottom-6 select-none">
               "
             </span>
           </motion.blockquote>
