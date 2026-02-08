@@ -82,7 +82,7 @@ const itemVariants = {
 
 const Pricing = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.15 });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="pricing" className="py-24 sm:py-32 lg:py-40 bg-[#faf9f7] overflow-hidden">

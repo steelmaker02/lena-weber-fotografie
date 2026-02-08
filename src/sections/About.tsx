@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
