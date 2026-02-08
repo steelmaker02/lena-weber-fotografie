@@ -12,12 +12,12 @@ import Footer from './sections/Footer';
 function App() {
   useEffect(() => {
     const imagesToPreload = [
-      './hero-bg.webp',
-      './about-portrait.webp',
-      './street-1.webp',
-      './street-2.webp',
-      './nude-1.webp',
-      './nude-2.webp',
+      './hero-bg.jpg',
+      './about-portrait.jpg',
+      './street-1.jpg',
+      './street-2.jpg',
+      './nude-1.jpg',
+      './nude-2.lpg',
     ];
 
     imagesToPreload.forEach((src) => {
